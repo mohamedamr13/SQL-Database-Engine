@@ -2,13 +2,13 @@
 
 
 
- It is resourceful to use this engine to learn what happens under the hood of a real relational database engine when firing a query. 
+ It is resourceful to use this engine to simulate what happens under the hood of a real relational database engine when firing a query. 
  
  To try the engine , download the zip file and open on your preferred Java IDE. 
  
  **If you use Eclipse IDE , make sure to import the file as a maven project** 
 
-To recall what happens in a relational database visit [this article]( https://www.geeksforgeeks.org/relational-model-in-dbms/ )
+To recall what happens in a relational database visit [this article]( https://www.geeksforgeeks.org/relational-model-in-dbms/ ) 
 
 ```java 
 public interface DBAppInterface {
