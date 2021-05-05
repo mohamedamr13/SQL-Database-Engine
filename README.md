@@ -4,10 +4,28 @@
 
  It is resourceful to use this engine to learn what happens under the hood of a real relational database engine when firing a query 
 
-![image](https://user-images.githubusercontent.com/65868639/117134010-514ad580-ada5-11eb-8d07-a885a554fae5.png)
 
-To recall what happens in a relational database check [this article](https://www.geeksforgeeks.org/relational-model-in-dbms/)
+```java 
+public interface DBAppInterface {
 
+    void init();
+
+    void createTable(String tableName, String clusteringKey, Hashtable<String,String> colNameType, Hashtable<String,String> colNameMin, Hashtable<String,String> colNameMax) throws DBAppException;
+
+    void createIndex(String tableName, String[] columnNames) throws DBAppException;
+
+    void insertIntoTable(String tableName, Hashtable<String, Object> colNameValue) throws DBAppException;
+
+    void updateTable(String tableName, String clusteringKeyValue, Hashtable<String, Object> columnNameValue) throws DBAppException;
+
+    void deleteFromTable(String tableName, Hashtable<String, Object> columnNameValue) throws DBAppException;
+
+    Iterator selectFromTable(SQLTerm[] sqlTerms, String[] arrayOperators) throws DBAppException;
+
+
+}
+
+```
 
 ## Accepted Data Types 
 For simplicity , there are only 4 supported data types for column values in the engine. 
