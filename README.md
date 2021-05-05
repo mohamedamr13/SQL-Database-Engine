@@ -6,7 +6,7 @@
  
  To try the engine , download the zip file and open on your preferred Java IDE. 
  
- ** If using Eclipse IDE , make sure to import the file as a maven project ** 
+ **If you use Eclipse IDE , make sure to import the file as a maven project** 
 
 To recall what happens in a relational database visit [this article]( https://www.geeksforgeeks.org/relational-model-in-dbms/ )
 
