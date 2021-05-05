@@ -4,6 +4,7 @@
 
  It is resourceful to use this engine to learn what happens under the hood of a real relational database engine when firing a query 
 
+To recall what happens in a relational database visit [this article]( https://www.geeksforgeeks.org/relational-model-in-dbms/ )
 
 ```java 
 public interface DBAppInterface {
