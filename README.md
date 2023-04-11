@@ -9,6 +9,29 @@
 
 To recall what happens in a relational database visit [this article]( https://www.geeksforgeeks.org/relational-model-in-dbms/ ) 
 
+
+```python
+  if 'cdm' in self.opt.lcf:
+                cdm_context_out = torch.mul(local_context_out, lcf_cdm_vec)
+                cdm_context_out = self.SA1(cdm_context_out)
+                cat_out = torch.cat((global_context_out, cdm_context_out), dim=-1)
+                cat_out = self.linear_double(cat_out)
+            elif 'cdw' in self.opt.lcf:
+                cdw_context_out = torch.mul(local_context_out, lcf_cdw_vec)
+                cdw_context_out = self.SA1(cdw_context_out)
+                cat_out = torch.cat((global_context_out, cdw_context_out), dim=-1)
+                cat_out = self.linear_double(cat_out)
+            elif 'fusion' in self.opt.lcf:
+                cdm_context_out = torch.mul(local_context_out, lcf_cdm_vec)
+                cdw_context_out = torch.mul(local_context_out, lcf_cdw_vec)
+                cat_out = torch.cat((global_context_out, cdw_context_out, cdm_context_out), dim=-1)
+                cat_out = self.linear_triple(cat_out)
+            sa_out = self.SA2(cat_out)
+            pooled_out = self.pooler(sa_out)
+            pooled_out = self.dropout(pooled_out)
+            apc_logits = self.dense(pooled_out)
+```
+
 ```java 
 public interface DBAppInterface {
 
